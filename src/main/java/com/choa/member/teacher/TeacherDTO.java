@@ -2,7 +2,9 @@ package com.choa.member.teacher;
 
 import javax.xml.crypto.Data;
 
-public class TeacherDTO {
+import com.choa.member.MemberDTO;
+
+public class TeacherDTO extends MemberDTO{
 	private String tid;
 	private String subject;
 	private Data hiredate;

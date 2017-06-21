@@ -5,7 +5,7 @@ public class MemberDTO {
 	private String id;
 	private String pw;
 	private String name;
-	private int age;
+	private Integer age;
 	private String grade;
 	private String fname;
 	private String oriname;
@@ -28,10 +28,10 @@ public class MemberDTO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getAge() {
+	public Integer getAge() {
 		return age;
 	}
-	public void setAge(int age) {
+	public void setAge(Integer age) {
 		this.age = age;
 	}
 	public String getGrade() {
