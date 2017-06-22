@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Mapper -->
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
- <mapper namespace="TeacherMapper">
-<!-- 	insert id=joinMember
-	<insert id="joinMember" parameterType="com.choa.member.teacher.TeacherDTO">
-		insert into member
-		values (#{id}, #{pw}, #{name}, #{age}, #{grade}, #{fname}, #{oriname})
-	</insert> -->
-	<!-- insert id=joinTeacher -->
-	<insert id="joinTeacher" parameterType="com.choa.member.teacher.TeacherDTO">
-		insert into teacher
-		values(#{tid}, #{subject}, sysdate)
-	</insert>
-</mapper>
+  <mapper namespace="TeacherMapper">
+  
+  <select id="memberLogin" parameterType="com.choa.member.MemberDTO" resultType="com.choa.member.teacher.TeacherDTO">
+	select M.*, T.* from MEMBER M, TEACHER T 
+	where M.id=#{id} and M.pw=#{pw} and M.id=T.tid
+	</select> 
+	
+     <insert id="joinTeacher" parameterType="com.choa.member.teacher.TeacherDTO">
+        insert into teacher values(#{id}, #{subject}, sysdate)
+     </insert>
+     
+  	<!-- view -->
+	<select id="memberPage" parameterType="java.lang.String" resultType="com.choa.member.teacher.TeacherDTO">
+		select * from teacher where tid=#{id}
+	</select>
+  </mapper>

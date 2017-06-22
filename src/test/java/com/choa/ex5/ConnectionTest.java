@@ -28,7 +28,7 @@ public class ConnectionTest extends MyAbstractTestUnit{
 		memberDTO.setName("choao");
 		memberDTO.setAge(28);
 		memberDTO.setGrade("s");
-		memberDTO.setFname("fname");
+		memberDTO.setFilename("fname");
 		memberDTO.setOriname("oriname");
 /*		StudentDTO studentDTO = new StudentDTO();
 		studentDTO.setId("choao10");

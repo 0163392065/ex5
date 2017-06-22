@@ -24,7 +24,7 @@ public class FileUploadController {
 		
 	}
 	
-	//2번 방법?
+	//1번 방법 request
 	//@RequestMapping(value = "/test/fileUp1", method=RequestMethod.POST)
 	public void fileUpload1(String name, MultipartHttpServletRequest request) throws Exception{
 		System.out.println("NAME : " + name);
@@ -53,6 +53,16 @@ public class FileUploadController {
 	}
 	
 	//3번 방법
+	//06.22 수정
+	@RequestMapping(value = "/test/fileUp1", method=RequestMethod.POST)
+	public void fileUpload3(FileDTO fileDTO, HttpSession session) throws Exception{
+		FileSaver fs = new FileSaver();
+		String realPath = session.getServletContext().getRealPath("resources/upload");
+			
+		fs.filesave(realPath, fileDTO.getF1());
+	}
+	
+/*	//3번 방법
 	@RequestMapping(value = "/test/fileUp1", method=RequestMethod.POST)
 	public void fileUpload3(FileDTO fileDTO, HttpSession session) throws Exception{
 		FileSaver fs = new FileSaver();
@@ -62,7 +72,7 @@ public class FileUploadController {
 		
 		
 		fs.filesave(realPath, oriName, fileDate);
-	}
+	}*/
 	
 }
 	

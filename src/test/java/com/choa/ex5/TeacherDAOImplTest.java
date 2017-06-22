@@ -11,32 +11,37 @@ import com.choa.member.student.StudentDAOImpl;
 import com.choa.member.student.StudentDTO;
 import com.choa.member.teacher.TeacherDAOImpl;
 import com.choa.member.teacher.TeacherDTO;
+import com.choa.member.teacher.TeacherServiceImpl;
 
 public class TeacherDAOImplTest extends MyAbstractTestUnit{
 	
 	@Autowired
 	private TeacherDAOImpl teacherDAOImpl;
+	@Autowired
+	private TeacherServiceImpl teacherServiceImpl;
 	private static TeacherDTO teacherDTO;
 	
 	@Test
-	public void test() throws Exception{
-		int result = teacherDAOImpl.memberJoin(teacherDTO);
-		assertEquals(1, result);
+	public void test() throws Exception {
+		TeacherDTO memberDTO=(TeacherDTO)teacherDAOImpl.test(teacherDTO);
+		System.out.println(memberDTO.getName());
+		System.out.println(memberDTO.getSubject());
 	}
 	
 	@BeforeClass
-	public static void makeStudent() {
+	public static void makeStudent(){
+		String data="hani";
 		teacherDTO = new TeacherDTO();
-		teacherDTO.setId("choao11T");
-		teacherDTO.setPw("choao");
-		teacherDTO.setName("choao");
-		teacherDTO.setAge(300);
-		teacherDTO.setGrade("t");
-		teacherDTO.setFname("fname");
-		teacherDTO.setOriname("oriname");
-		teacherDTO.setTid("choa11T");
-		teacherDTO.setSubject("ENG");
-
+		teacherDTO.setId(data);
+		teacherDTO.setPw(data);
+		teacherDTO.setName(data);
+		teacherDTO.setAge(20);
+		teacherDTO.setGrade("teacher");
+		teacherDTO.setFilename(data);
+		teacherDTO.setOriname(data);
+		teacherDTO.setSubject("math");
+		
+		
 	}
 
 }

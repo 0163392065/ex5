@@ -1,30 +1,27 @@
 package com.choa.member.teacher;
 
+import java.sql.Date;
+
 import javax.xml.crypto.Data;
 
 import com.choa.member.MemberDTO;
 
 public class TeacherDTO extends MemberDTO{
-	private String tid;
-	private String subject;
-	private Data hiredate;
 	
-	public String getTid() {
-		return tid;
-	}
-	public void setTid(String tid) {
-		this.tid = tid;
-	}
+	private String subject;
+	private Date hiredate;
+	
+
 	public String getSubject() {
 		return subject;
 	}
 	public void setSubject(String subject) {
 		this.subject = subject;
 	}
-	public Data getHiredate() {
+	public Date getHiredate() {
 		return hiredate;
 	}
-	public void setHiredate(Data hiredate) {
+	public void setHiredate(Date hiredate) {
 		this.hiredate = hiredate;
 	}
 	
